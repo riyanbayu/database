@@ -1,0 +1,108 @@
+
+
+	" MEMBUAT TABEL PEGAWAI MENGGUNAKAN XAMPP/MYSQL DI CMD SECARA (MANUAL) "
+
+
+
+Langkah-langkah yang harus kalian ikuti yaitu seperti dibawah ini...!!!!!!!!
+
+
+
+Buka aplikasi CMD di komputer kalian. 
+
+Masukkan perintah 
+	- cd c:\xampp\mysql\bin
+	- mysql.exe -u root
+
+
+Membuat database baru
+	- create database praktikum4;
+
+
+Menggunakan database
+	- use praktikum4;
+
+
+Membuat table baru
+	- create table pegawai
+Contoh :
+	- (id_pegawai varchar(20),
+	- nama_depan varchar(20),
+	- nama_belakang varchar(20),
+	- email varchar(20),
+	- telephone varchar(20),
+	- tgl_kontrak date,
+	- id_job varchar(20),
+	- gaji varchar(20),
+	- tunjangan varchar(20));
+
+
+Menampilkan hasil
+	- desc pegawai;
+
+
+Menambahkan primary key
+	- alter table pegawai add primary key(id_pegawai);
+
+
+Menampilkan hasil
+	- desc pegawai;
+
+
+Memasukan biodata pegawai
+	- insert into pegawai(id_pegawai, nama_depan, nama_belakang, email,telephone, tgl_kontrak, id_job, gaji, tunjangan) 
+	- values
+Contoh :
+	- ('E001', 'ferry', 'gustiawan', 'ferry@yahoo.com', '087117059004', '2005-09-01', 'L0001', '2000000', '5000000'),
+
+	- ('E002', 'aris', 'ganiandri', 'aris@yahoo.com', '081312345678', '2006-09-01', 'L0002', '2000000', '2000000'),
+
+	- ('E003', 'faiz', 'ahmad', 'faiz@gmail.com', '081367384322', '2006-10-01', 'L0003', '1500000', 'NULL'),
+
+	-('E004', 'emma', 'bunton', 'emma@gmail.com', '081363484342', '2006-10-01', 'L0004', '1500000', '0'),
+
+	- ('E005', 'mike', 'scoff', 'mike@plasa.com', '081634545555', '2007-09-01', 'L0005', '1250000', '0'),
+
+	- ('E006', 'lincoln', 'burrous', 'linc@yahoo.com', '085273884323', '2008-09-01', 'L0006', '1750000', 'NULL');
+
+
+Menampilkan hasi
+	- desc pegawai;
+
+
+Menampilkan table pegawai
+	- select*from pegawai;
+
+
+Menampilkan table pegawai dengan gaji 2000000 dan 1250000 
+	- select*from pegawai where gaji <> 2000000 and 1250000;
+
+
+Menampilkan table pegawai dengan tunjangan
+	- select*from pegawai where tunjangan = 'NULL';
+
+
+Menampilkan table pegawai dengan tunjangan (not like)
+	- select*from pegawai where tunjangan not like 'NULL';
+
+
+Menghitung jumlah baris satu kolom pada tabel
+	-SELECT COUNT(id_pegawai) from pegawai;
+
+
+Menghitung jumlah nilai suatu kolom pada tabel
+	- select sum(gaji)as jumlah from pegawai;
+
+
+Menghitung rata-rata dari nilai suatu kolom pada tabel
+	-select avg(gaji)as rerata from pegawai;
+
+
+Menampilkan nilai terkecil dari suatu kolom pada tabel
+	- select min(gaji)as terkecil from pegawai;
+
+
+Menampilkan nilai terbesar dari suatu kolom pada tabel
+	-select max(gaji)as terbesar from pegawai;
+
+

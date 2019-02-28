@@ -1,0 +1,68 @@
+
+	"Manipulasi data menggunakan Xampp/MySQL di CMD"
+
+1. membuat database baru;
+	create database latihan;
+
+2. menggunakan database
+	use database;
+
+3. membuat table
+	create table mahasiswa (masukan data yang ingin kalian buat)
+contoh :	-(Nim int(10) primary key,
+	-Nama varchar(20) not null
+dan seterusnya...
+jangan lupa jika sudah selesai memasukan data, gunakan akhiran ( ; ) 
+
+3. menampilkan table
+	desc mahasiswa;
+
+4. memasukan biodata
+	insert into mahasiswa (masukan biodata yang ingin kita buat)
+contoh :	-(nama, kota, jeniskelamin, tanggallahir)
+	-values
+	-("11223344", "Ari Santoso", "Bekasi", "Laki-laki", "1998-10-12"),
+dan seterusnya....
+
+5. menampilkan table
+	select*from mahasiswa;
+
+6. mengubah table
+	update mahasiswa (masukan data yang ingin kita buat)
+contoh :	-set tanggallahir ="1979-08-31"
+	-where nim ="11223344";
+
+select*from mahasiswa;
+
+7. menampilkan data pada satu orang
+	select*from mahasiswa where nim ="11223344";
+
+8. menghapus data pada satu orang
+	delete from mahasiswa where nim ="11223346";
+
+select*from mahasiswa;
+
+9. mengelompokan data mahasiswa menurut tanggal lahir dan nim
+	select nim, nama, kota, jeniskelamin, tanggallahir from mahasiswa
+	-where tanggallahir  >="1996-01-02"
+	-order by nim;
+
+10. memilih data menurut kota dan jenis kelamin
+	select*from mahasiswa
+	-where kota ="Bekasi"
+	-and jeniskelamin ="perempuan"
+
+11. memilih data menurut kota & jenis kelamin (menggunakan atau) tanggal lahir & jenis kelamin
+	select*from mahasiswa
+	-where kota ="Bekasi"
+	-and jeniskelamin ="laki-laki"
+	-tanggallahir <="1997"
+	-and jeniskelamin ="perempuan"
+	-order by nim;
+
+12. memilih data menurut nama & alamat jalan mahasiswa
+	select nama, alamatjalan from mahasiswa
+
+13. menampilkan data menurut nama
+	select*from mahasiswa
+	-order by nama asc;
